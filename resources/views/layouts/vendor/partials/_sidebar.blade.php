@@ -43,7 +43,7 @@
             </div>
 
             <!-- Content -->
-            <div class="navbar-vertical-content text-capitalize bg-334257">
+            <div class="navbar-vertical-content text-capitalize bg-a1fe00">
                 <ul class="navbar-nav navbar-nav-lg nav-tabs">
                     <!-- Dashboards -->
                     <li class="pt-4"></li>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
@@ -43,7 +43,7 @@
             <div class="auth-wrapper-body auth-form-appear">
                 @php($systemlogo=\App\Models\BusinessSetting::where(['key'=>'logo'])->first()->value)
                 <a class="auth-logo mb-5" href="javascript:">
-                    <img class="z-index-2" src="{{asset('/assets/admin/img/auth-fav.png')}}">
+                    <img class="z-index-2" src="{{asset('/assets/admin/img/zatu.png')}}">
                 </a>
                 <div class="text-center">
                     <div class="auth-header mb-5">
