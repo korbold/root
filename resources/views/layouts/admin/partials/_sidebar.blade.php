@@ -1,6 +1,6 @@
 <style>
     .nav-sub {
-        background: #1F2D05 !important;
+        background: #4B6B0F !important;
     }
 </style>
 
@@ -45,7 +45,7 @@
             </div>
 
             <!-- Content -->
-            <div class="navbar-vertical-content" id="navbar-vertical-content" style="background-color: #32490A;">
+            <div class="navbar-vertical-content" id="navbar-vertical-content" style="background-color: #5C8516;">
                 <!-- Search Form -->
                 <form class="sidebar--search-form">
                     <div class="search--form-group">

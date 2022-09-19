@@ -77,7 +77,8 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="input-label">
-                                            {{translate('messages.delivery_charge_per_km')}} ({{\App\CentralLogics\Helpers::currency_symbol()}})
+                                            {{translate('messages.delivery_charge_per_km')}}
+                                            ({{\App\CentralLogics\Helpers::currency_symbol()}})
                                         </label>
                                         <input id="delivery_charge_per_km" name="per_km_delivery_charge" type="number" class="form-control h--45px" placeholder="Ex: 10" value="{{$zone->per_km_shipping_charge}}" required>
                                     </div>

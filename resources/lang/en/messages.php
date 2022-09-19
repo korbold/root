@@ -1654,4 +1654,6 @@ el panel web/aplicación de la tienda no tendrá acceso para administrar los ali
   'messaging_sender_id' => 'messaging sender id',
   'app_id' => 'app id',
   'measurement_id' => 'measurement id',
+  'Withdraw request process' => 'Withdraw request process',
+  'Note' => 'Note',
 );
