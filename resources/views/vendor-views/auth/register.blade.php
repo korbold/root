@@ -1,7 +1,7 @@
 @extends('layouts.landing.app')
 @section('title', __('messages.restaurant_registration'))
 @push('css_or_js')
-    <link rel="stylesheet" href="{{ asset('assets/admin') }}/css/toastr.css">
+    <link rel="stylesheet" href="{{ asset('public/assets/admin') }}/css/toastr.css">
     <style>
         #map {
             height: 350px;
@@ -137,7 +137,7 @@
                                     <center>
                                         <img style="max-width: 100%;border: 1px solid; border-radius: 10px; height:150px;"
                                             id="coverImageViewer"
-                                            src="{{ asset('assets/admin/img/900x400/img1.jpg') }}"
+                                            src="{{ asset('public/assets/admin/img/900x400/img1.jpg') }}"
                                             alt="Product thumbnail" />
                                     </center>
                                     <label for="name" class="pt-2">{{ __('messages.upload') }} {{ __('messages.cover') }}
@@ -155,7 +155,7 @@
                                     <center>
                                         <img style="max-width: 100%;border: 1px solid; border-radius: 10px; height:150px;"
                                             id="logoImageViewer"
-                                            src="{{ asset('assets/admin/img/160x160/img1.jpg') }}"
+                                            src="{{ asset('public/assets/admin/img/160x160/img1.jpg') }}"
                                             alt="Product thumbnail" />
                                     </center>
 
@@ -176,7 +176,7 @@
                                 <div class="form-group">
                                     <label class="input-label" for="choice_zones">{{ __('messages.zone') }}<span
                                             class="input-label-secondary" title="{{ __('messages.select_zone_for_map') }}"><img
-                                                src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                 alt="{{ __('messages.select_zone_for_map') }}"></span></label>
                                     <select name="zone_id" id="choice_zones" required class="form-control js-select2-custom"
                                         data-placeholder="{{ __('messages.select') }} {{ __('messages.zone') }}">
@@ -200,7 +200,7 @@
                                     <label class="input-label" for="latitude">{{ __('messages.latitude') }}<span
                                             class="input-label-secondary"
                                             title="{{ __('messages.restaurant_lat_lng_warning') }}"><img
-                                                src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                 alt="{{ __('messages.restaurant_lat_lng_warning') }}"></span></label>
                                     <input type="text" id="latitude" name="latitude" class="form-control"
                                         placeholder="Ex : -94.22213" value="{{ old('latitude') }}" required readonly>                                    
@@ -211,7 +211,7 @@
                                     <label class="input-label" for="longitude">{{ __('messages.longitude') }}<span
                                             class="input-label-secondary"
                                             title="{{ __('messages.restaurant_lat_lng_warning') }}"><img
-                                                src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                 alt="{{ __('messages.restaurant_lat_lng_warning') }}"></span></label>
                                     <input type="text" name="longitude" class="form-control" placeholder="Ex : 103.344322"
                                         id="longitude" value="{{ old('longitude') }}" required readonly>                                    
@@ -298,7 +298,7 @@
 
     @endsection
     @push('script_2')
-        <script src="{{ asset('assets/admin') }}/js/toastr.js"></script>
+        <script src="{{ asset('public/assets/admin') }}/js/toastr.js"></script>
         {!! Toastr::message() !!}
 
         @if ($errors->any())
@@ -343,7 +343,7 @@
             });
         </script>
 
-        <script src="{{ asset('assets/admin/js/spartan-multi-image-picker.js') }}"></script>
+        <script src="{{ asset('public/assets/admin/js/spartan-multi-image-picker.js') }}"></script>
         <script type="text/javascript">
             $(function() {
                 $("#coba").spartanMultiImagePicker({
@@ -353,7 +353,7 @@
                     groupClassName: 'col-lg-2 col-md-4 col-sm-4 col-6',
                     maxFileSize: '',
                     placeholderImage: {
-                        image: '{{ asset('assets/admin/img/400x400/img2.jpg') }}',
+                        image: '{{ asset('public/assets/admin/img/400x400/img2.jpg') }}',
                         width: '100%'
                     },
                     dropFileLabel: "Drop Here",

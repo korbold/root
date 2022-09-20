@@ -1,7 +1,7 @@
 <!-- Header -->
 <div class="card-header">
     <h5 class="card-header-title">
-        <img src="{{asset('/assets/admin/img/dashboard/most-rated.png')}}" alt="dashboard" class="card-header-icon">
+        <img src="{{asset('/public/assets/admin/img/dashboard/most-rated.png')}}" alt="dashboard" class="card-header-icon">
         <span>{{trans('messages.top_rated_foods')}}</span>
     </h5>
     @php($params=session('dash_params'))
@@ -23,8 +23,8 @@
             <div class="grid-card top--rated-food pb-4 cursor-pointer" onclick="location.href='{{route('admin.food.view',[$item['id']])}}'">
                 <center>
                     <img class="initial-42"
-                        src="{{asset('storage/app/product')}}/{{$item['image']}}"
-                        onerror="this.src='{{asset('assets/admin/img/100x100/2.png')}}'"
+                        src="{{asset('storage/app/public/product')}}/{{$item['image']}}"
+                        onerror="this.src='{{asset('public/assets/admin/img/100x100/2.png')}}'"
                         alt="{{$item->name}} image">
                 </center>
                 <div class="text-center mt-3">

@@ -40,8 +40,8 @@
                             <td class="media cart--media align-items-center cursor-pointer"
                                 onclick="quickViewCartItem({{ $cartItem['id'] }}, {{ $key }})">
                                 <img class="avatar avatar-sm mr-2"
-                                    src="{{ asset('storage/app/product') }}/{{ $cartItem['image'] }}"
-                                    onerror="this.src='{{ asset('/assets/admin/img/100x100/food-default-image.png') }}'"
+                                    src="{{ asset('storage/app/public/product') }}/{{ $cartItem['image'] }}"
+                                    onerror="this.src='{{ asset('/public/assets/admin/img/100x100/food-default-image.png') }}'"
                                     alt="{{ $cartItem['name'] }} image">
                                 <div class="media-body">
                                     <h5 class="text-hover-primary mb-0">{{ Str::limit($cartItem['name'], 12) }}</h5>

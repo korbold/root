@@ -8,11 +8,11 @@
 
 @section('content')
     <div class="content container-fluid">
-
+        
         <div class="page-header">
             <h1 class="page-header-title text-capitalize">
                 <div class="card-header-icon d-inline-flex mr-2 img">
-                    <img src="{{asset('/assets/admin/img/export.png')}}" alt="">
+                    <img src="{{asset('/public/assets/admin/img/export.png')}}" alt="">
                 </div>
                 {{__('messages.export')}} {{__('messages.categories')}}
             </h1>

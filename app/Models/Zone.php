@@ -15,8 +15,8 @@ class Zone extends Model
     protected $casts = [
         'id'=>'integer',
         'status'=>'integer',
-        'minimum_shipping_charge'=>'float',
-        'per_km_shipping_charge'=>'float'
+        'minimum_shipping_charge'=>'double',
+        'per_km_shipping_charge'=>'double'
     ];
 
     protected $spatialFields = [

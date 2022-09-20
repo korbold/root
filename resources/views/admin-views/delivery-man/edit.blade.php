@@ -3,7 +3,7 @@
 @section('title','Update delivery-man')
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('/assets/admin/css/intlTelInput.css')}}" />
+    <link rel="stylesheet" href="{{asset('/public/assets/admin/css/intlTelInput.css')}}" />
 @endpush
 
 @section('content')
@@ -12,7 +12,7 @@
         <div class="page-header">
             <h1 class="page-header-title mb-2 text-capitalize">
                 <div class="card-header-icon d-inline-flex mr-2 img">
-                    <img src="{{asset('/assets/admin/img/delivery-man.png')}}" alt="public">
+                    <img src="{{asset('/public/assets/admin/img/delivery-man.png')}}" alt="public">
                 </div>
                 <span>
                     {{__('messages.update')}} {{__('messages.deliveryman')}}
@@ -94,8 +94,8 @@
                                 <label class="d-block mb-lg-5 text-center">{{__('messages.deliveryman')}} {{__('messages.image')}} <small class="text-danger">* ( {{__('messages.ratio')}} 1:1 )</small></label>
                                 <center>
                                     <img class="initial-24" id="viewer"
-                                        onerror="this.src='{{asset('assets/admin/img/100x100/user.png')}}'"
-                                            src="{{asset('storage/app/delivery-man').'/'.$delivery_man['image']}}" alt="delivery-man image"/>
+                                        onerror="this.src='{{asset('public/assets/admin/img/100x100/user.png')}}'"
+                                            src="{{asset('storage/app/public/delivery-man').'/'.$delivery_man['image']}}" alt="delivery-man image"/>
                                 </center>
                                 <div class="custom-file">
                                     <input type="file" name="image" id="customFileEg1" class="custom-file-input h--45px"
@@ -147,7 +147,7 @@
                                 </div>
                             </div>
                             @foreach(json_decode($delivery_man['identity_image'],true) as $img)
-                                <img height="150" src="{{asset('storage/app/delivery-man').'/'.$img}}">
+                                <img height="150" src="{{asset('storage/app/public/delivery-man').'/'.$img}}">
                             @endforeach
                         </div>
                     </div>
@@ -198,8 +198,8 @@
 @endsection
 
 @push('script_2')
-    <script src="{{asset('assets/admin/js/intlTelInput.js')}}"></script>
-    <script src="{{asset('assets/admin/js/intlTelInput-jquery.min.js')}}"></script>
+    <script src="{{asset('public/assets/admin/js/intlTelInput.js')}}"></script>
+    <script src="{{asset('public/assets/admin/js/intlTelInput-jquery.min.js')}}"></script>
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -217,11 +217,11 @@
             readURL(this);
         });
 
-        <?php
+        <?php 
             $country=\App\Models\BusinessSetting::where('key','country')->first();
         ?>
         var phone = $("#phone").intlTelInput({
-            utilsScript: "{{asset('assets/admin/js/intlTellInput-util.min.js')}}",
+            utilsScript: "{{asset('public/assets/admin/js/intlTellInput-util.min.js')}}",
             nationalMode: true,
             autoHideDialCode: true,
             autoPlaceholder: "ON",
@@ -234,7 +234,7 @@
         });
     </script>
 
-    <script src="{{asset('assets/admin/js/spartan-multi-image-picker.js')}}"></script>
+    <script src="{{asset('public/assets/admin/js/spartan-multi-image-picker.js')}}"></script>
     <script type="text/javascript">
         $(function () {
             $("#coba").spartanMultiImagePicker({
@@ -244,7 +244,7 @@
                 groupClassName: 'col-6 col-lg-4',
                 maxFileSize: '',
                 placeholderImage: {
-                    image: '{{asset('assets/admin/img/100x100/user2.png')}}',
+                    image: '{{asset('public/assets/admin/img/100x100/user2.png')}}',
                     width: '100%'
                 },
                 dropFileLabel: "Drop Here",
@@ -274,7 +274,7 @@
     </script>
             <script>
                 $('#reset_btn').click(function(){
-                    $('#viewer').attr('src','{{asset('storage/app/delivery-man')}}/{{$delivery_man['image']}}');
+                    $('#viewer').attr('src','{{asset('storage/app/public/delivery-man')}}/{{$delivery_man['image']}}');
                 })
 
             </script>

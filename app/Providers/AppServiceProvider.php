@@ -5,6 +5,7 @@ ini_set('memory_limit', '-1');
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use App\CentralLogics\Helpers;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
 
         try
         {

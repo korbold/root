@@ -27,8 +27,8 @@
                     <div class="col-lg-5 col-md-6 mb-3 mb-md-0">
                         <div class="d-flex flex-wrap align-items-center food--media">
                             <img class="avatar avatar-xxl avatar-4by3 mr-4"
-                                 src="{{asset('storage/app/product')}}/{{$product['image']}}"
-                                 onerror="this.src='{{asset('assets/admin/img/160x160/img2.jpg')}}'"
+                                 src="{{asset('storage/app/public/product')}}/{{$product['image']}}"
+                                 onerror="this.src='{{asset('public/assets/admin/img/160x160/img2.jpg')}}'"
                                  alt="Image Description" style="max-width:184px;aspect-ratio:1;height:unset;">
                             <div class="d-block">
                                 <div class="rating--review">
@@ -366,8 +366,8 @@
                                     <div class="d-flex align-items-center">
                                         <div class="avatar rounded">
                                             <img class="avatar-img" width="75" height="75"
-                                                onerror="this.src='{{asset('assets/admin/img/160x160/img1.jpg')}}'"
-                                                src="{{asset('storage/app/profile/'.$review->customer->image)}}"
+                                                onerror="this.src='{{asset('public/assets/admin/img/160x160/img1.jpg')}}'"
+                                                src="{{asset('storage/app/public/profile/'.$review->customer->image)}}"
                                                 alt="Image Description">
                                         </div>
                                         <div class="ml-3">
@@ -406,7 +406,7 @@
                 </table>
                 @if(count($reviews) === 0)
                 <div class="empty--data">
-                    <img src="{{asset('/assets/admin/img/empty.png')}}" alt="public">
+                    <img src="{{asset('/public/assets/admin/img/empty.png')}}" alt="public">
                     <h5>
                         {{translate('no_data_found')}}
                     </h5>

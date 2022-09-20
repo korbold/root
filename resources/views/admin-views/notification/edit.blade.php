@@ -14,7 +14,7 @@
                 <div class="col-sm mb-2 mb-sm-0">
                     <h1 class="page-header-title text-capitalize">
                         <div class="card-header-icon d-inline-flex mr-2 img">
-                            <img src="{{asset('/assets/admin/img/bell.png')}}" alt="public">
+                            <img src="{{asset('/public/assets/admin/img/bell.png')}}" alt="public">
                         </div>
                         <span>
                             {{__('messages.notification')}} {{__('messages.update')}}
@@ -49,7 +49,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="input-label" for="tergat">{{__('messages.send')}} {{__('messages.to')}}</label>
-
+                        
                                 <select id="tergat" name="tergat" class="form-control" id="tergat" data-placeholder="{{__('messages.select')}} {{__('messages.tergat')}}" required>
                                     <option value="customer" {{$notification->tergat=='customer'?'selected':''}}>{{__('messages.customer')}}</option>
                                     <option value="deliveryman" {{$notification->tergat=='deliveryman'?'selected':''}}>{{__('messages.deliveryman')}}</option>
@@ -62,7 +62,7 @@
                                 <label class="form-label">&nbsp;</label>
                                 <center class="mb-3">
                                     <img  class="initial-30" id="viewer"
-                                        src="{{asset('storage/app/notification')}}/{{$notification['image']}}"  onerror="src='{{asset('assets/admin/img/900x400/img1.jpg')}}'" alt="image"/>
+                                        src="{{asset('storage/app/public/notification')}}/{{$notification['image']}}"  onerror="src='{{asset('public/assets/admin/img/900x400/img1.jpg')}}'" alt="image"/>
                                 </center>
                                 <label>{{__('messages.notification')}} {{__('messages.banner')}}</label><small class="text-danger">* ( {{__('messages.ratio')}} 3:1 )</small>
                                 <div class="custom-file">
@@ -112,7 +112,7 @@
             $('#notification_title').val("{{$notification['title']}}");
             $('#zone').val("{{$notification->zone_id}}").trigger('change');
             $('#tergat').val("{{$notification->tergat}}").trigger('change');
-            $('#viewer').attr('src', "{{asset('storage/app/notification')}}/{{$notification['image']}}");
+            $('#viewer').attr('src', "{{asset('storage/app/public/notification')}}/{{$notification['image']}}");
             $('#customFileEg1').val(null);
             $('#description').val("{{$notification['description']}}");
         })

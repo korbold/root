@@ -13,7 +13,7 @@ $max_processing_time = explode('-', $order['restaurant']['delivery_time'])[0];
 
             <h1 class="page-header-title text-capitalize">
                 <div class="card-header-icon d-inline-flex mr-2 img">
-                    <img src="{{asset('assets/admin/img/orders.png')}}" alt="public">
+                    <img src="{{asset('public/assets/admin/img/orders.png')}}" alt="public">
                 </div>
                 <span>
                     Order Details
@@ -169,7 +169,7 @@ $max_processing_time = explode('-', $order['restaurant']['delivery_time'])[0];
                                                         <div class="media">
                                                             <a class="avatar mr-3 cursor-pointer initial-80"
                                                                 href="{{ route('vendor.food.view', $detail->food['id']) }}">
-                                                                <img class="img-fluid rounded initial-80" src="{{ asset('storage/app/product') }}/{{ $detail->food['image'] }}" onerror="this.src='{{ asset('assets/admin/img/100x100/1.png') }}'"
+                                                                <img class="img-fluid rounded initial-80" src="{{ asset('storage/app/public/product') }}/{{ $detail->food['image'] }}" onerror="this.src='{{ asset('public/assets/admin/img/100x100/1.png') }}'"
                                                                     alt="Image Description">
                                                             </a>
                                                             <div class="media-body">
@@ -227,8 +227,8 @@ $max_processing_time = explode('-', $order['restaurant']['delivery_time'])[0];
                                                 <div class="media">
                                                     <div class="avatar avatar-xl mr-3">
                                                         <img class="img-fluid rounded initial-80"
-                                                            src="{{ asset('storage/app/campaign') }}/{{ $detail->campaign['image'] }}"
-                                                            onerror="this.src='{{ asset('assets/admin/img/100x100/1.png') }}'"
+                                                            src="{{ asset('storage/app/public/campaign') }}/{{ $detail->campaign['image'] }}"
+                                                            onerror="this.src='{{ asset('public/assets/admin/img/100x100/1.png') }}'"
                                                             alt="Image Description">
                                                     </div>
                                                     <div class="media-body">
@@ -411,8 +411,8 @@ $max_processing_time = explode('-', $order['restaurant']['delivery_time'])[0];
                                 </h5>
                                 <div class="media align-items-center deco-none customer--information-single" href="javascript:">
                                     <div class="avatar avatar-circle">
-                                        <img class="avatar-img  initial-81" onerror="this.src='{{ asset('assets/admin/img/160x160/img3.png') }}'"
-                                            src="{{ asset('storage/app/delivery-man/' . $order->delivery_man->image) }}"
+                                        <img class="avatar-img  initial-81" onerror="this.src='{{ asset('public/assets/admin/img/160x160/img3.png') }}'"
+                                            src="{{ asset('storage/app/public/delivery-man/' . $order->delivery_man->image) }}"
                                             alt="Image Description">
                                     </div>
                                     <div class="media-body">
@@ -484,8 +484,8 @@ $max_processing_time = explode('-', $order['restaurant']['delivery_time'])[0];
                             <div class="media align-items-center deco-none customer--information-single" href="javascript:">
                                 <div class="avatar avatar-circle">
                                     <img class="avatar-img  initial-81"
-                                        onerror="this.src='{{ asset('assets/admin/img/resturant-panel/customer.png') }}'"
-                                        src="{{ asset('storage/app/profile/' . $order->customer->image) }}"
+                                        onerror="this.src='{{ asset('public/assets/admin/img/resturant-panel/customer.png') }}'"
+                                        src="{{ asset('storage/app/public/profile/' . $order->customer->image) }}"
                                         alt="Image Description">
                                 </div>
                                 <div class="media-body">

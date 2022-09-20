@@ -12,7 +12,7 @@
         <div class="page-header">
             <h1 class="page-header-title text-capitalize">
                 <div class="card-header-icon d-inline-flex mr-2 img">
-                    <img src="{{asset('/assets/admin/img/app.png')}}" class="mw-26px" alt="public">
+                    <img src="{{asset('/public/assets/admin/img/app.png')}}" class="mw-26px" alt="public">
                 </div>
                 <span>
                     {{__('messages.app_settings')}}
@@ -44,14 +44,14 @@
 
         @php($most_reviewed_foods=\App\Models\BusinessSetting::where(['key'=>'most_reviewed_foods'])->first())
         @php($most_reviewed_foods=$most_reviewed_foods?$most_reviewed_foods->value:null)
-
+    
         <div class="card mb-3">
             <div class="card-body">
                 <div class="row g-3">
                     <div class="col-md-6 col-sm-6 col-12">
                         <div class="form-group m-0">
                             <label class="toggle-switch toggle-switch-sm d-flex justify-content-between border rounded px-3 px-xl-4 form-control" for="popular_food">
-                                <span class="pr-2">{{__('messages.popular_foods')}}:</span>
+                                <span class="pr-2">{{__('messages.popular_foods')}}:</span> 
                                 <input type="checkbox" class="toggle-switch-input" onclick="location.href='{{route('admin.business-settings.toggle-settings',['popular_food',$popular_food?0:1, 'popular_food'])}}'" id="popular_food" {{$popular_food?'checked':''}}>
                                 <span class="toggle-switch-label">
                                     <span class="toggle-switch-indicator"></span>
@@ -62,7 +62,7 @@
                     <div class="col-md-6 col-sm-6 col-12">
                         <div class="form-group m-0">
                             <label class="toggle-switch toggle-switch-sm d-flex justify-content-between border rounded px-3 px-xl-4 form-control" for="popular_restaurant">
-                                <span class="pr-2">{{__('messages.popular_restaurants')}}:</span>
+                                <span class="pr-2">{{__('messages.popular_restaurants')}}:</span> 
                                 <input type="checkbox" name="popular_restaurant" class="toggle-switch-input" onclick="location.href='{{route('admin.business-settings.toggle-settings',['popular_restaurant',$popular_restaurant?0:1, 'popular_restaurant'])}}'" id="popular_restaurant" {{$popular_restaurant?'checked':''}}>
                                 <span class="toggle-switch-label">
                                     <span class="toggle-switch-indicator"></span>
@@ -73,7 +73,7 @@
                     <div class="col-md-6 col-sm-6 col-12">
                         <div class="form-group m-0">
                             <label class="toggle-switch toggle-switch-sm d-flex justify-content-between border rounded px-3 px-xl-4 form-control" for="new_restaurant">
-                                <span class="pr-2 text-capitalize">{{__('messages.new_restaurants')}}:</span>
+                                <span class="pr-2 text-capitalize">{{__('messages.new_restaurants')}}:</span> 
                                 <input type="checkbox" class="toggle-switch-input" onclick="location.href='{{route('admin.business-settings.toggle-settings',['new_restaurant',$new_restaurant?0:1, 'new_restaurant'])}}'" id="new_restaurant" {{$new_restaurant?'checked':''}}>
                                 <span class="toggle-switch-label">
                                     <span class="toggle-switch-indicator"></span>
@@ -84,7 +84,7 @@
                     <div class="col-md-6 col-sm-6 col-12">
                         <div class="form-group m-0">
                             <label class="toggle-switch toggle-switch-sm d-flex justify-content-between border rounded px-3 px-xl-4 form-control" for="most_reviewed_foods">
-                                <span class="pr-2 text-capitalize">{{__('messages.most_reviewed_foods')}}:</span>
+                                <span class="pr-2 text-capitalize">{{__('messages.most_reviewed_foods')}}:</span> 
                                 <input type="checkbox" class="toggle-switch-input" onclick="location.href='{{route('admin.business-settings.toggle-settings',['most_reviewed_foods',$most_reviewed_foods?0:1, 'most_reviewed_foods'])}}'" id="most_reviewed_foods" {{$most_reviewed_foods?'checked':''}}>
                                 <span class="toggle-switch-label">
                                     <span class="toggle-switch-indicator"></span>

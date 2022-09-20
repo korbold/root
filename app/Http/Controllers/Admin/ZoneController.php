@@ -29,7 +29,7 @@ class ZoneController extends Controller
             'minimum_delivery_charge'=>'required_with:per_km_delivery_charge'
         ]);
 
-        $value = $request->coordinates; 
+        $value = $request->coordinates;
         foreach(explode('),(',trim($value,'()')) as $index=>$single_array){
             if($index == 0)
             {
@@ -74,7 +74,7 @@ class ZoneController extends Controller
             'per_km_delivery_charge'=>'required_with:minimum_delivery_charge',
             'minimum_delivery_charge'=>'required_with:per_km_delivery_charge'
         ]);
-        $value = $request->coordinates; 
+        $value = $request->coordinates;
         foreach(explode('),(',trim($value,'()')) as $index=>$single_array){
             if($index == 0)
             {
@@ -154,7 +154,7 @@ class ZoneController extends Controller
         else{
             session()->put('zone_id', $id);
         }
-        
+
         return back();
     }
 

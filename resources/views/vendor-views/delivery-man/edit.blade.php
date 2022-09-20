@@ -3,7 +3,7 @@
 @section('title',translate('Update delivery-man'))
 
 @push('css_or_js')
-    <link rel="stylesheet" href="{{asset('/assets/admin/css/intlTelInput.css')}}" />
+    <link rel="stylesheet" href="{{asset('/public/assets/admin/css/intlTelInput.css')}}" />
 @endpush
 
 @section('content')
@@ -90,7 +90,7 @@
                             <div class="row g-2" id="coba">
                                 @foreach(json_decode($delivery_man['identity_image'],true) as $img)
                                     <div class="col-6 col-sm-4 spartan_item_wrapper">
-                                        <img style="width: 100%; vertical-align: middle;height:120px;object-fit:cover" src="{{asset('storage/app/delivery-man').'/'.$img}}">
+                                        <img style="width: 100%; vertical-align: middle;height:120px;object-fit:cover" src="{{asset('storage/app/public/delivery-man').'/'.$img}}">
                                     </div>
                                 @endforeach
                             </div>
@@ -108,8 +108,8 @@
                         <div class="card-body pt-0 d-flex flex-column">
                                 <center class="py-3 my-auto">
                                     <img style="height: 140px; border-radius: 10px;" id="viewer"
-                                    onerror="this.src='{{asset('/assets/admin/img/100x100/user2.png')}}'"
-                                            src="{{asset('storage/app/delivery-man').'/'.$delivery_man['image']}}" alt="delivery-man image"/>
+                                    onerror="this.src='{{asset('/public/assets/admin/img/100x100/user2.png')}}'"
+                                            src="{{asset('storage/app/public/delivery-man').'/'.$delivery_man['image']}}" alt="delivery-man image"/>
                                 </center>
                                 <div class="custom-file mt-0">
                                     <input type="file" name="image" id="customFileEg1" class="custom-file-input"
@@ -171,8 +171,8 @@
 @endsection
 
 @push('script_2')
-    <script src="{{asset('assets/admin/js/intlTelInput.js')}}"></script>
-    <script src="{{asset('assets/admin/js/intlTelInput-jquery.min.js')}}"></script>
+    <script src="{{asset('public/assets/admin/js/intlTelInput.js')}}"></script>
+    <script src="{{asset('public/assets/admin/js/intlTelInput-jquery.min.js')}}"></script>
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -205,7 +205,7 @@
         });
     </script>
 
-    <script src="{{asset('assets/admin/js/spartan-multi-image-picker.js')}}"></script>
+    <script src="{{asset('public/assets/admin/js/spartan-multi-image-picker.js')}}"></script>
     <script type="text/javascript">
         $(function () {
             $("#coba").spartanMultiImagePicker({
@@ -215,7 +215,7 @@
                 groupClassName: 'col-6 col-sm-4',
                 maxFileSize: '',
                 placeholderImage: {
-                    image: '{{asset('assets/admin/img/100x100/user2.png')}}',
+                    image: '{{asset('public/assets/admin/img/100x100/user2.png')}}',
                     width: '100%'
                 },
                 dropFileLabel: "Drop Here",

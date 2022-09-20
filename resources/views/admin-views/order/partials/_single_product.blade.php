@@ -1,8 +1,8 @@
 <div class="product-card card cursor-pointer" onclick="quickView('{{$product->id}}')" >
     <div class="card-header inline_product clickable p-0 initial-34">
         <div class="d-flex align-items-center justify-content-center d-block">
-            <img class="initial-35" src="{{asset('storage/app/product')}}/{{$product['image']}}"
-                onerror="this.src='{{asset('assets/admin/img/100x100/food-default-image.png')}}'"
+            <img class="initial-35" src="{{asset('storage/app/public/product')}}/{{$product['image']}}" 
+                onerror="this.src='{{asset('public/assets/admin/img/100x100/food-default-image.png')}}'"
                 >
         </div>
     </div>

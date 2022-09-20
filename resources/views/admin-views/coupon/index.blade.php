@@ -43,7 +43,7 @@
                         <div class="form-group col-lg-3 col-sm-6" id="restaurant_wise">
                             <label class="input-label" for="exampleFormControlSelect1">{{__('messages.restaurant')}}<span
                                     class="input-label-secondary"></span></label>
-                            <select id="select_restaurant" name="restaurant_ids[]" class="js-data-example-ajax form-control" data-placeholder="{{__('messages.select_restaurant')}}" title="{{__('messages.select_restaurant')}}">
+                            <select id="select_restaurant" name="restaurant_ids[]" class="js-data-example-ajax form-control" data-placeholder="{{__('messages.select_restaurant')}}" title="{{__('messages.select_restaurant')}}">                                            
                             </select>
                         </div>
                         <div class="form-group col-lg-3 col-sm-6" id="zone_wise">
@@ -108,7 +108,7 @@
                                 <input id="min_purchase" type="number" step="0.01" name="min_purchase" value="0" min="0" max="999999999999.99" class="form-control"
                                     placeholder="100">
                             </div>
-                        </div>
+                        </div>                                
                     </div>
                     <div class="btn--container justify-content-end">
                         <button id="reset_btn" type="button" class="btn btn--reset">{{__('messages.reset')}}</button>
@@ -139,7 +139,7 @@
                         data-hs-datatables-options='{
                         "order": [],
                         "orderCellsTop": true,
-
+                        
                         "entries": "#datatableEntries",
                         "isResponsive": false,
                         "isShowPaging": false,
@@ -223,7 +223,7 @@
                 </table>
                 @if(count($coupons) === 0)
                 <div class="empty--data">
-                    <img src="{{asset('/assets/admin/img/empty.png')}}" alt="public">
+                    <img src="{{asset('/public/assets/admin/img/empty.png')}}" alt="public">
                     <h5>
                         {{translate('no_data_found')}}
                     </h5>
@@ -252,7 +252,7 @@
     $("#date_to").on("change", function () {
         $('#date_from').attr('max',$(this).val());
     });
-
+    
     $(document).on('ready', function () {
         $('#discount_type').on('change', function() {
          if($('#discount_type').val() == 'amount')
@@ -265,7 +265,7 @@
                 $('#max_discount').removeAttr("readonly");
             }
         });
-
+        
         $('#date_from').attr('min',(new Date()).toISOString().split('T')[0]);
         $('#date_to').attr('min',(new Date()).toISOString().split('T')[0]);
         $('.js-data-example-ajax').select2({
@@ -305,7 +305,7 @@
                 },
                 language: {
                     zeroRecords: '<div class="text-center p-4">' +
-                    '<img class="mb-3" src="{{asset('assets/admin/svg/illustrations/sorry.svg')}}" alt="Image Description" style="width: 7rem;">' +
+                    '<img class="mb-3" src="{{asset('public/assets/admin/svg/illustrations/sorry.svg')}}" alt="Image Description" style="width: 7rem;">' +
                     '<p class="mb-0">No data to show</p>' +
                     '</div>'
                 }
@@ -403,6 +403,6 @@
             $('#select_restaurant').val(null).trigger('change');
             $('#choice_zones').val(null).trigger('change');
         })
-
+        
     </script>
 @endpush

@@ -104,12 +104,12 @@
     border: 0;
     outline: none;
   }
-
+  
   </style>
 
 </head>
 <body style="background-color: #ececec;margin:0;padding:0">
-  <?php
+  <?php 
     use App\Models\BusinessSetting;
     $company_phone =BusinessSetting::where('key', 'phone')->first()->value;
     $company_email =BusinessSetting::where('key', 'email_address')->first()->value;
@@ -122,7 +122,7 @@
 <div style="width:650px;margin:auto; background-color:#ececec;height:50px;">
 
 </div>
-<div style="width:650px;margin:auto; background-color:white;margin-top:100px;
+<div style="width:650px;margin:auto; background-color:white;margin-top:100px; 
             padding-top:40px;padding-bottom:40px;border-radius: 3px;">
     <table style="background-color: rgb(255, 255, 255);width: 90%;margin:auto;height:72px; border-bottom:1px ridge;">
         <tbody>
@@ -133,7 +133,7 @@
                 </td>
                 <td>
                     <div style="text-align: right; margin-right:15px;">
-                        <img style="max-width:250px;border:0;" src="{{asset('/storage/app/business/'.$logo)}}" title=""
+                        <img style="max-width:250px;border:0;" src="{{asset('/storage/app/public/business/'.$logo)}}" title=""
                             class="sitelogo" width="60%"  alt=""/>
                     </div>
                 </td>
@@ -145,28 +145,28 @@
         <tbody >
             <tr style="width: 100%;">
                 <td style="width:50%;vertical-align: top; margin-top:5px;">
-
+                    
                     <div style="text-align:left;margin-top:10px;">
                       <span style="color: #130505 !important;text-transform: capitalize;font-weight: bold;">{{__('messages.restaurant')}} {{__('messages.info')}} </span><br>
-
+                      
                       @if ($order->restaurant)
-
+                    
                         <div style="display:flex; align-items:center;margin-top:10px;">
-
-                            <img style="border:0;border-radius:50%;" src="{{asset('/storage/app/restaurant/'.$order->restaurant->logo)}}" title=""
+                            
+                            <img style="border:0;border-radius:50%;" src="{{asset('/storage/app/public/restaurant/'.$order->restaurant->logo)}}" title=""
                                     class="sitelogo" width="20%"  alt=""/>
-
+                        
                             <span style="padding-left: 5px;">{{$order->restaurant->name}}</span>
                         </div>
                     @endif
                   </div>
-
+    
                 </td>
                 <td style="width:50%;vertical-align: top;">
                     <div style="text-align:right;margin-top:10px;">
                         <span style="color: #130505 !important;text-transform: capitalize;font-weight: bold;">{{__('messages.payment_details')}}  </span><br>
                         <div style="margin-top: 10px;">
-                          <span style="color: #414141 !important ; text-transform: capitalize;">{{ str_replace('_',' ',$order->payment_method) }}</span><br>
+                          <span style="color: #414141 !important ; text-transform: capitalize;">{{ str_replace('_',' ',$order->payment_method) }}</span><br> 
                         <span style="color: {{$order->payment_status=='paid'?'green':'red'}};">
                             {{$order->payment_status}}
                         </span><br>
@@ -178,10 +178,10 @@
                 </td>
             </tr>
         </tbody>
-
+        
     </table>
-
-
+    
+    
     <?php
         $subtotal=0;
         $total=0;
@@ -204,18 +204,18 @@
                             <th style="padding-bottom: 8px;width:20%;">{{__('messages.total')}}</th>
                         </tr>
                         @foreach ($order->details as $key=>$details)
-                        <?php
-                            $subtotal=($details['price'])*$details->quantity;
+                        <?php 
+                            $subtotal=($details['price'])*$details->quantity; 
                             $item_details = json_decode($details->food_details, true);
                         ?>
                             <tr style="text-align: center; border-bottom: 1px ridge;">
-
+                                
                                 <td style="padding:5px;">{{$key+1}}</td>
                                 <td style="padding:5px;">
                                   <span style="font-size: 14px;">
                                     {{Str::limit($item_details['name'],55)}}
                                   </span>
-
+                                    
                                 <br>
                                 @if(count(json_decode($details['variation'],true))>0)
                                   <span style="font-size: 12px;">
@@ -232,19 +232,19 @@
                                     </div>
                                     @php($total_addon_price+=$addon['price']*$addon['quantity'])
                                 @endforeach
-
+                               
                                 </td>
                                 <td style="padding:5px;">{{\App\CentralLogics\Helpers::format_currency($details['price'])}}</td>
                                 <td style="padding:5px;">{{$details->quantity}}</td>
                                 <td style="padding:5px;">{{\App\CentralLogics\Helpers::format_currency($subtotal)}}</td>
                             </tr>
-                            <?php
+                            <?php 
                                 $sub_total+=$details['price']*$details['quantity'];
                                 $total_discount_on_product+=$details['discount'];
                                 $total+=$subtotal;
                             ?>
                         @endforeach
-
+                        
                     {{-- </div> --}}
                 </tbody>
             </table>
@@ -254,13 +254,13 @@
         <table style="background-color: rgb(255, 255, 255);width: 90%;margin:auto;margin-top:30px;">
             <tr>
                 <th style="text-align: left; vertical-align: auto;">
-
+                    
                 </th>
-
+    
                 <td style="text-align: right">
                     <table style="width: 46%;margin-left:41%; display: inline;text-transform: capitalize; ">
                         <tbody>
-
+    
                         <tr>
                             <th  ><b>{{__('messages.item')}} {{__('messages.price')}} : </b></th>
                             <td>{{\App\CentralLogics\Helpers::format_currency($sub_total)}}</td>
@@ -268,12 +268,12 @@
                         <tr>
                             <th  ><b>{{__('messages.addon')}} {{__('messages.cost')}} : </b></th>
                             <td>{{\App\CentralLogics\Helpers::format_currency($total_addon_price)}}</td>
-
+    
                         </tr>
                         <tr>
                             <th  ><b>{{__('messages.subtotal')}} : </b></th>
                             <td>{{\App\CentralLogics\Helpers::format_currency($sub_total + $total_addon_price)}}</td>
-
+    
                         </tr>
                         <tr>
                             <td>{{__('messages.tax')}}  : </td>
@@ -312,35 +312,35 @@
                     </table>
                 </td>
             </tr>
-        </table>
+        </table>    
 </div>
 
 <div style="padding:5px;width:650px;margin:auto;margin-top:5px; margin-bottom:50px;">
     <table style="margin:auto;width:90%; color:#777777;">
         <tbody style="text-align: center;">
-
+   
             <tr>
                 @php($social_media = \App\Models\SocialMedia::active()->get())
-
+                
                 @if(isset($social_media))
                     <th style="width: 100%;">
                         @foreach ($social_media as $item)
                           <div style="display:inline-block;">
                             <a href="{{$item->link}}" target=”_blank”>
-                            <img src="{{asset('assets/admin/img/'.$item->name.'.png')}}" alt="" style="height: 14px; width:14px; padding: 0px 3px 0px 5px;">
+                            <img src="{{asset('public/assets/admin/img/'.$item->name.'.png')}}" alt="" style="height: 14px; width:14px; padding: 0px 3px 0px 5px;">
                             </a>
                           </div>
                         @endforeach
                     </th>
                 @endif
-            </tr>
+            </tr>                 
             <tr>
                 <th >
                     <div style="font-weight: 400;font-size: 11px;line-height: 22px;color: #242A30;"><span style="margin-right:5px;"> <a href="tel:{{$company_phone}}" style="text-decoration: none; color: inherit;">{{__('messages.phone')}}: {{$company_phone}}</a></span> <span><a href="mailto:{{$company_email}}" style="text-decoration: none; color: inherit;">{{__('messages.email')}}: {{$company_email}}</a></span></div>
                     @if ($company_links['web_app_url_status'])
                     <div style="font-weight: 400;font-size: 11px;line-height: 22px;color: #242A30;">
                         <a href="{{$company_links['web_app_url']}}" style="text-decoration: none; color: inherit;">{{$company_links['web_app_url']}}</a></div>
-                    @endif
+                    @endif 
                     <div style="font-weight: 400;font-size: 11px;line-height: 22px;color: #242A30;">{{$company_address}}</div>
                     <span style="font-weight: 400;font-size: 10px;line-height: 22px;color: #242A30;">{{__('messages.All copy right reserved',['year'=>date('Y'),'title'=>$company_name])}}</span>
                 </th>

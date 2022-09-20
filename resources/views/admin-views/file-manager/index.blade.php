@@ -35,7 +35,7 @@
                         <div class="col-auto">
                             @if($file['type']=='folder')
                             <a class="btn p-0 btn--folder"  href="{{route('admin.file-manager.index', base64_encode($file['path']))}}">
-                                <img class="img-thumbnail border-0 p-0" src="{{asset('assets/admin/img/folder.png')}}" alt="">
+                                <img class="img-thumbnail border-0 p-0" src="{{asset('public/assets/admin/img/folder.png')}}" alt="">
                                 <p>{{Str::limit($file['name'],10)}}</p>
                             </a>
                             @elseif($file['type']=='file')
@@ -43,7 +43,7 @@
                             <div class="text-center" data-toggle="modal" data-target="#imagemodal{{$key}}" title="{{$file['name']}}">
                                 <div class="gallary-card initial-25">
                                     <img class="initial-26" src="{{asset('storage/app/'.$file['path'])}}" alt="{{$file['name']}}">
-                                </div>
+                                </div>    
                                 <p class="overflow-hidden">{{Str::limit($file['name'],10)}}</p>
                             </div>
                             <div class="modal fade" id="imagemodal{{$key}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -61,7 +61,7 @@
                                             <button class="btn btn-info" onclick="copy_test('{{$file['db_path']}}')"><i class="tio-copy"></i> Copy path</button>
                                             {{--<form action="{{route('admin.file-manager.destroy',base64_encode($file['path']))}}" method="post">
                                                 @csrf
-                                                @method('delete')
+                                                @method('delete')    
                                                 <button class="btn btn-danger" type="submit"><i class="tio-delete"></i> {{__('messages.delete')}}</button>
                                             </form>--}}
                                         </div>
@@ -161,6 +161,6 @@
             ProgressBar: true
         });
     }
-
+    
 </script>
 @endpush

@@ -64,7 +64,7 @@
                                     <div class="form-group" id="item_wise">
                                         <label class="input-label" for="exampleFormControlInput1">{{__('messages.select')}} {{__('messages.food')}}</label>
                                         <select name="item_id" id="choice_item" class="form-control js-select2-custom" placeholder="{{__('messages.select_food')}}">
-
+                                            
                                         </select>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                             <small class="text-danger">* ( {{__('messages.ratio')}} 3:1 )</small>
                                         </label>
                                         <center class="my-auto">
-                                            <img class="initial-2" id="viewer" onerror="this.src='{{asset('assets/admin/img/900x400/img1.jpg')}}'" src="{{asset('storage/app/banner')}}/{{$banner['image']}}" alt="campaign image"/>
+                                            <img class="initial-2" id="viewer" onerror="this.src='{{asset('public/assets/admin/img/900x400/img1.jpg')}}'" src="{{asset('storage/app/public/banner')}}/{{$banner['image']}}" alt="campaign image"/>
                                         </center>
                                         <div class="form-group">
                                             <div class="custom-file">
@@ -173,7 +173,7 @@
 
         $('.js-select2-custom').each(function () {
             var select2 = $.HSCore.components.HSSelect2.init($(this));
-        });
+        });   
     });
 
         function banner_type_change(order_type) {
@@ -194,7 +194,7 @@
         }
         @if($banner->type == 'item_wise')
         getRequest('{{url('/')}}/admin/food/get-foods?zone_id={{$banner->zone_id}}&data[]={{$banner->data}}','choice_item');
-        @endif
+        @endif 
         $('#banner_form').on('submit', function (e) {
             e.preventDefault();
             var formData = new FormData(this);
@@ -231,14 +231,14 @@
         });
     </script>
 
-
+    
 
 
         <script>
             $('#reset_btn').click(function(){
                 $('#banner_title').val("{{$banner->title}}");
                 $('#banner_type').val("{{$banner->type}}").trigger('change');
-                $('#viewer').attr('src','{{asset('storage/app/banner')}}/{{$banner['image']}}');
+                $('#viewer').attr('src','{{asset('storage/app/public/banner')}}/{{$banner['image']}}');
                 $('#customFileEg1').val(null);
                 $('#zone').val("{{$banner->zone_id}}").trigger('change');
                 setTimeout(function () {
@@ -246,7 +246,7 @@
                         $('#resturant_ids').val("{{$banner->data}}").trigger('change');
                     @elseif($banner->type == 'item_wise')
                         $('#choice_item').val("{{$banner->data}}").trigger('change');
-                    @endif
+                    @endif                    
                 }, 1000);
             })
 
