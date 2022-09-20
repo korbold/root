@@ -14,7 +14,7 @@
                 <div class="col-sm mb-2 mb-sm-0">
                     <h2 class="page-header-title text-capitalize">
                         <div class="card-header-icon d-inline-flex mr-2 img">
-                            <img src="{{asset('assets/admin/img/sub-category.png')}}" alt="">
+                            <img src="{{asset('public/assets/admin/img/sub-category.png')}}" alt="">
                         </div>
                         <span>
                             {{$category->position?__('messages.sub').' ':''}}{{__('messages.category')}} {{__('messages.update')}}
@@ -71,7 +71,7 @@
                             <div class="form-group">
                                 <center>
                                     <img class="initial-18" id="viewer"
-                                        src="{{asset('storage/app/category')}}/{{$category['image']}}" alt=""/>
+                                        src="{{asset('storage/app/public/category')}}/{{$category['image']}}" alt=""/>
                                 </center>
                             </div>
                             <div class="form-group mt-2">
@@ -139,7 +139,7 @@
     <script>
         $('#reset_btn').click(function(){
             $('#name').val("{{$lang==$default_lang?$category['name']:($translate[$lang]['name']??'')}}");
-            $('#viewer').attr('src', "{{asset('storage/app/category')}}/{{$category['image']}}");
+            $('#viewer').attr('src', "{{asset('storage/app/public/category')}}/{{$category['image']}}");
             $('#customFileEg1').val(null);
         })
     </script>

@@ -11,7 +11,7 @@
                 <div class="col-sm mb-2 mb-sm-0">
                     <h1 class="page-header-title text-capitalize">
                         <div class="card-header-icon d-inline-flex mr-2 img">
-                            <img src="{{asset('/assets/admin/img/business.png')}}" alt="public">
+                            <img src="{{asset('/public/assets/admin/img/business.png')}}" alt="public">
                         </div>
                         <span>
                             {{ __('messages.business') }}
@@ -111,7 +111,7 @@
                                         <label class="input-label text-capitalize d-flex alig-items-center"
                                             for="latitude">{{ __('messages.latitude') }}<span class="input-label-secondary"
                                                  data-toggle="tooltip" data-placement="right" data-original-title="{{ __('messages.click_on_the_map_select_your_defaul_location') }}"><img
-                                                    src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                    src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                     alt="{{ __('messages.click_on_the_map_select_your_defaul_location') }}"></span></label>
                                         <input type="text" id="latitude" name="latitude" class="form-control d-inline"
                                             placeholder="Ex : -94.22213"
@@ -121,7 +121,7 @@
                                         <label class="input-label text-capitalize d-flex alig-items-center"
                                             for="longitude">{{ __('messages.longitude') }}<span class="input-label-secondary"
                                                  data-toggle="tooltip" data-placement="right" data-original-title="{{ __('messages.click_on_the_map_select_your_defaul_location') }}"><img
-                                                    src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                    src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                     alt="{{ __('messages.click_on_the_map_select_your_defaul_location') }}"></span></label>
                                         <input type="text" name="longitude" class="form-control" placeholder="Ex : 103.344322"
                                             id="longitude" value="{{ $default_location ? $default_location['lng'] : 0 }}"
@@ -151,8 +151,8 @@
                                         <center class="h-100px">
                                             <img class="initial-10"
                                                 id="viewer"
-                                                onerror="this.src='{{ asset('assets/admin/img/160x160/img2.jpg') }}'"
-                                                src="{{ asset('storage/app/business/' . $logo) }}" alt="logo image" />
+                                                onerror="this.src='{{ asset('public/assets/admin/img/160x160/img2.jpg') }}'"
+                                                src="{{ asset('storage/app/public/business/' . $logo) }}" alt="logo image" />
                                         </center>
                                         <label class="input-label mt-2"> {{ __('messages.logo') }} <small class="text-danger">* ( {{ __('messages.ratio') }} 300x100 )</small></label>
                                         <div class="custom-file mb-3">
@@ -169,8 +169,8 @@
                                     <div class="form-group mb-0">
                                         <center class="h-100px">
                                             <img class="initial-10" id="iconViewer"
-                                                onerror="this.src='{{ asset('assets/admin/img/160x160/img2.jpg') }}'"
-                                                src="{{ asset('storage/app/business/' . $icon) }}" alt="Fav icon" />
+                                                onerror="this.src='{{ asset('public/assets/admin/img/160x160/img2.jpg') }}'"
+                                                src="{{ asset('storage/app/public/business/' . $icon) }}" alt="Fav icon" />
                                         </center>
                                         <label class="input-label mt-2"> {{ __('messages.Fav Icon') }}<small class="text-danger">* ( {{ __('messages.ratio') }} 150x150 )</small></label>
                                         <div class="custom-file mb-3">
@@ -963,7 +963,7 @@
                                     <div class="form-group">
                                         <label class="input-label d-inline">{{ __('messages.scheduled') }}
                                             {{ __('messages.orders') }}</label><small class="text-danger">
-                                            <!-- <span class="input-label-secondary" title="{{ __('messages.customer_varification_toggle') }}"><img src="{{ asset('/assets/admin/img/info-circle.svg') }}" alt="{{ __('messages.customer_varification_toggle') }}"></span> -->
+                                            <!-- <span class="input-label-secondary" title="{{ __('messages.customer_varification_toggle') }}"><img src="{{ asset('/public/assets/admin/img/info-circle.svg') }}" alt="{{ __('messages.customer_varification_toggle') }}"></span> -->
                                             *
                                         </small>
                                         <div class="input-group input-group-md-down-break">
@@ -999,7 +999,7 @@
                                             class="input-label d-inline">{{ __('messages.order_confirmation_model') }}</label><small class="text-danger">
                                             <span class="input-label-secondary"
                                                 title="{{ __('messages.order_confirmation_model_hint') }}"><img
-                                                    src="{{ asset('/assets/admin/img/info-circle.svg') }}"></span>
+                                                    src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"></span>
                                             *</small>
                                         <div class="input-group input-group-md-down-break">
                                             <!-- Custom Radio -->
@@ -1035,7 +1035,7 @@
                                         <label class="input-label d-inline">{{ translate('dm_tips_status') }}</label><small class="text-danger">
                                             <span class="input-label-secondary"
                                                 title="{{ __('messages.dm_tips_model_hint') }}"><img
-                                                    src="{{ asset('/assets/admin/img/info-circle.svg') }}"></span>
+                                                    src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"></span>
                                             *</small>
                                         <div class="input-group input-group-md-down-break">
                                             <!-- Custom Radio -->
@@ -1072,7 +1072,7 @@
                                     <div class="form-group">
                                         <label
                                             class="input-label d-inline">{{ __('messages.restaurant_cancellation_toggle') }}</label><small class="text-danger">
-                                            <!-- <span class="input-label-secondary" title="{{ __('messages.customer_varification_toggle') }}"><img src="{{ asset('/assets/admin/img/info-circle.svg') }}" alt="{{ __('messages.customer_varification_toggle') }}"></span> -->
+                                            <!-- <span class="input-label-secondary" title="{{ __('messages.customer_varification_toggle') }}"><img src="{{ asset('/public/assets/admin/img/info-circle.svg') }}" alt="{{ __('messages.customer_varification_toggle') }}"></span> -->
                                             *
                                         </small>
                                         <div class="input-group input-group-md-down-break">
@@ -1108,7 +1108,7 @@
                                     <div class="form-group">
                                         <label
                                             class="input-label d-inline">{{ __('messages.deliveryman_cancellation_toggle') }}</label><small class="text-danger">
-                                            <!-- <span class="input-label-secondary" title="{{ __('messages.customer_varification_toggle') }}"><img src="{{ asset('/assets/admin/img/info-circle.svg') }}" alt="{{ __('messages.customer_varification_toggle') }}"></span> -->
+                                            <!-- <span class="input-label-secondary" title="{{ __('messages.customer_varification_toggle') }}"><img src="{{ asset('/public/assets/admin/img/info-circle.svg') }}" alt="{{ __('messages.customer_varification_toggle') }}"></span> -->
                                             *
                                         </small>
                                         <div class="input-group input-group-md-down-break">
@@ -1144,7 +1144,7 @@
                                     <div class="form-group">
                                         <label
                                             class="input-label d-inline">{{ __('messages.show_earning_for_each_order') }}</label><small class="text-danger">
-                                            <!-- <span class="input-label-secondary" title="{{ __('messages.customer_varification_toggle') }}"><img src="{{ asset('/assets/admin/img/info-circle.svg') }}" alt="{{ __('messages.customer_varification_toggle') }}"></span> -->
+                                            <!-- <span class="input-label-secondary" title="{{ __('messages.customer_varification_toggle') }}"><img src="{{ asset('/public/assets/admin/img/info-circle.svg') }}" alt="{{ __('messages.customer_varification_toggle') }}"></span> -->
                                             *
                                         </small>
                                         <div class="input-group input-group-md-down-break">
@@ -1217,7 +1217,7 @@
                                             {{ __('messages.verification') }}</label><small class="text-danger"><span
                                                 class="input-label-secondary"
                                                 title="{{ __('messages.customer_varification_toggle') }}"><img
-                                                    src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                    src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                     alt="{{ __('messages.customer_varification_toggle') }}"></span> *</small>
                                         <div class="input-group input-group-md-down-break">
                                             <!-- Custom Radio -->
@@ -1251,7 +1251,7 @@
                                         <label class="input-label d-inline"> {{ __('messages.order') }}
                                             {{ __('messages.delivery') }} {{ __('messages.verification') }} </label><small class="text-danger"><span class="input-label-secondary"
                                                 title="{{ __('messages.order_varification_toggle') }}"><img
-                                                    src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                    src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                     alt="{{ __('messages.order_varification_toggle') }}"></span> *</small>
                                         <div class="input-group input-group-md-down-break">
                                             <!-- Custom Radio -->
@@ -1286,7 +1286,7 @@
                                         <label
                                             class="input-label d-inline">{{ __('messages.veg') }}/{{ __('messages.non_veg') }}</label><small class="text-danger"><span class="input-label-secondary"
                                                 title="{{ __('messages.veg_non_veg') }}"><img
-                                                    src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                    src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                     alt="{{ __('messages.order_varification_toggle') }}"></span> *</small>
                                         <div class="input-group input-group-md-down-break">
                                             <!-- Custom Radio -->
@@ -1321,7 +1321,7 @@
                                         <label
                                             class="input-label d-inline">{{ __('messages.restaurant_self_registration') }}</label><small class="text-danger"><span class="input-label-secondary"
                                                 title="{{ __('messages.restaurant_self_registration') }}"><img
-                                                    src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                    src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                     alt="{{ __('messages.restaurant_self_registration') }}"></span> *</small>
                                         <div class="input-group input-group-md-down-break">
                                             <!-- Custom Radio -->
@@ -1358,7 +1358,7 @@
                                         <label
                                             class="input-label d-inline">{{ __('messages.dm_self_registration') }}</label><small class="text-danger"><span class="input-label-secondary"
                                                 title="{{ __('messages.dm_self_registration') }}"><img
-                                                    src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                    src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                     alt="{{ __('messages.dm_self_registration') }}"></span> *</small>
                                         <div class="input-group input-group-md-down-break">
                                             <!-- Custom Radio -->
@@ -1662,7 +1662,7 @@
 
                                         <span data-toggle="tooltip" data-placement="right" data-original-title="{{translate('The given number will be the maximum ongoing orders for a delivery man.') }}"
                                     class="input-label-secondary"><img
-                                        src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                        src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                         alt="{{ __('messages.dm_maximum_order_hint') }}"></span>
                                         </label>
                                         <input type="number" name="dm_maximum_orders" class="form-control" id="dm_maximum_orders"
@@ -1676,7 +1676,7 @@
                                             for="free_delivery_over">
                                             <span class="line--limit-1">{{ __('messages.free_delivery_over') }} ({{ \App\CentralLogics\Helpers::currency_symbol() }})</span>
 
-                                            <span data-toggle="tooltip" data-placement="right" data-original-title="{{translate(' If the order amount exceeds this amount the delivery fee will be free and the delivery fee will be deducted from the admin’s commission.')}}" class="input-label-secondary"><img src="{{ asset('/assets/admin/img/info-circle.svg') }}" alt="{{ __('messages.dm_maximum_order_hint') }}"></span>
+                                            <span data-toggle="tooltip" data-placement="right" data-original-title="{{translate(' If the order amount exceeds this amount the delivery fee will be free and the delivery fee will be deducted from the admin’s commission.')}}" class="input-label-secondary"><img src="{{ asset('/public/assets/admin/img/info-circle.svg') }}" alt="{{ __('messages.dm_maximum_order_hint') }}"></span>
                                         </label>
                                         <label class="switch ml-3 float-right">
                                             <input type="checkbox" class="status" name="free_delivery_over_status"
@@ -1722,7 +1722,7 @@
                                                 {{translate('Delivery Man Maximum Cash in Hand')}} ({{ \App\CentralLogics\Helpers::currency_symbol() }})
                                             </span>
 
-                                            <span data-toggle="tooltip" data-placement="right" data-original-title="{{translate('If the cash in hand for a delivery man exceeds this amount the delivery man cannot accept new orders before depositing the amount to admin.')}}" class="input-label-secondary"><img src="{{ asset('/assets/admin/img/info-circle.svg') }}" alt="{{ __('messages.dm_maximum_order_hint') }}"></span>
+                                            <span data-toggle="tooltip" data-placement="right" data-original-title="{{translate('If the cash in hand for a delivery man exceeds this amount the delivery man cannot accept new orders before depositing the amount to admin.')}}" class="input-label-secondary"><img src="{{ asset('/public/assets/admin/img/info-circle.svg') }}" alt="{{ __('messages.dm_maximum_order_hint') }}"></span>
 
                                         </label>
                                         <input type="number" name="dm_max_cash_in_hand" class="form-control"

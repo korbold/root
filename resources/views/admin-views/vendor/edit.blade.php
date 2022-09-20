@@ -100,8 +100,8 @@
                                     <center>
                                         <img style="max-width: 100%;border: 1px solid #f4f4f4; border-radius: 10px; max-height:100px;margin-bottom:10px;"
                                             id="viewer"
-                                            onerror="this.src='{{ asset('assets/admin/img/100x100/restaurant-default-image.png') }}'"
-                                            src="{{ asset('storage/app/restaurant/' . $restaurant->logo) }}"
+                                            onerror="this.src='{{ asset('public/assets/admin/img/100x100/restaurant-default-image.png') }}'"
+                                            src="{{ asset('storage/app/public/restaurant/' . $restaurant->logo) }}"
                                             alt="Product thumbnail" />
                                     </center>
 
@@ -123,8 +123,8 @@
                                         <center>
                                             <img style="max-width: 100%;border: 1px solid #f4f4f4; border-radius: 10px; max-height:100px;margin-bottom:10px;"
                                                 id="coverImageViewer"
-                                                onerror="this.src='{{ asset('assets/admin/img/300x100/restaurant-default-image.png') }}'"
-                                                src="{{ asset('storage/app/restaurant/cover/' . $restaurant->cover_photo) }}"
+                                                onerror="this.src='{{ asset('public/assets/admin/img/300x100/restaurant-default-image.png') }}'"
+                                                src="{{ asset('storage/app/public/restaurant/cover/' . $restaurant->cover_photo) }}"
                                                 alt="Product thumbnail" />
                                         </center>
 
@@ -151,7 +151,7 @@
                                         <label class="input-label" for="choice_zones">{{ __('messages.zone') }}<span
                                                 class="input-label-secondary"
                                                 title="{{ __('messages.select_zone_for_map') }}"><img
-                                                    src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                    src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                     alt="{{ __('messages.select_zone_for_map') }}"></span></label>
                                         <select name="zone_id" id="choice_zones" onchange="get_zone_data(this.value)"
                                             data-placeholder="{{ __('messages.select') }} {{ __('messages.zone') }}"
@@ -176,7 +176,7 @@
                                             for="exampleFormControlInput1">{{ __('messages.latitude') }}<span
                                                 class="input-label-secondary"
                                                 title="{{ __('messages.restaurant_lat_lng_warning') }}"><img
-                                                    src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                    src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                     alt="{{ __('messages.restaurant_lat_lng_warning') }}"></span></label>
                                         <input type="text" name="latitude" class="form-control h--45px" id="latitude"
                                             placeholder="Ex : -94.22213" value="{{ $restaurant->latitude }}" readonly>
@@ -186,7 +186,7 @@
                                             for="exampleFormControlInput1">{{ __('messages.longitude') }}<span
                                                 class="input-label-secondary"
                                                 title="{{ __('messages.restaurant_lat_lng_warning') }}"><img
-                                                    src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                    src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                     alt="{{ __('messages.restaurant_lat_lng_warning') }}"></span></label>
                                         <input type="text" name="longitude" class="form-control h--45px" id="longitude"
                                             placeholder="Ex : 103.344322" value="{{ $restaurant->longitude }}" readonly>
@@ -560,9 +560,9 @@
             $('#address').val("{{ $restaurant->address }}");
             $('#minimum_delivery_time').val("{{ explode('-', $restaurant->delivery_time)[0] }}");
             $('#maximum_delivery_time').val("{{ explode('-', $restaurant->delivery_time)[1] }}");
-            $('#viewer').attr('src', "{{ asset('storage/app/restaurant/' . $restaurant->logo) }}");
+            $('#viewer').attr('src', "{{ asset('storage/app/public/restaurant/' . $restaurant->logo) }}");
             $('#customFileEg1').val(null);
-            $('#coverImageViewer').attr('src', "{{ asset('storage/app/restaurant/cover/' . $restaurant->cover_photo) }}");
+            $('#coverImageViewer').attr('src', "{{ asset('storage/app/public/restaurant/cover/' . $restaurant->cover_photo) }}");
             $('#coverImageUpload').val(null);
             $('#choice_zones').val({{$restaurant->zone_id}}).trigger('change');
             $('#f_name').val("{{ $restaurant->vendor->f_name }}");

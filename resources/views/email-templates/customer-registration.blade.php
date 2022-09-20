@@ -116,7 +116,7 @@
   <div style="width:595px;margin:auto; background-color:white;
               padding-top:40px;padding-bottom:40px;border-radius: 3px; text-align:center; ">
 
-      <img src="{{asset('/storage/app/business/'.$logo)}}" alt="{{$company_name}}" style="height: 15px; width:auto;">
+      <img src="{{asset('/storage/app/public/business/'.$logo)}}" alt="{{$company_name}}" style="height: 15px; width:auto;">
 
       <div class="congrats-box">
           <span style="font-weight: 700;font-size: 26px;color: #000000;text-transform: uppercase; line-height: 135.5%; display:block; margin-bottom:5px;">{{translate('messages.congratulations')}}</span>
@@ -149,7 +149,7 @@
                           @foreach ($social_media as $item)
                             <div style="display:inline-block;">
                               <a href="{{$item->link}}" target=”_blank”>
-                              <img src="{{asset('assets/admin/img/'.$item->name.'.png')}}" alt="" style="height: 14px; width:14px; padding: 0px 3px 0px 5px;">
+                              <img src="{{asset('public/assets/admin/img/'.$item->name.'.png')}}" alt="" style="height: 14px; width:14px; padding: 0px 3px 0px 5px;">
                               </a>
                             </div>
                           @endforeach

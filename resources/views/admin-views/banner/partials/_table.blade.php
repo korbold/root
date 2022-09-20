@@ -3,8 +3,8 @@
         <td>{{$key+1}}</td>
         <td>
             <span class="media align-items-center">
-                <img class="avatar avatar-lg mr-3 avatar--3-1" src="{{asset('storage/app/banner')}}/{{$banner['image']}}"
-                     onerror="this.src='{{asset('assets/admin/img/900x400/img1.jpg')}}'" alt="{{$banner->name}} image">
+                <img class="avatar avatar-lg mr-3 avatar--3-1" src="{{asset('storage/app/public/banner')}}/{{$banner['image']}}"
+                     onerror="this.src='{{asset('public/assets/admin/img/900x400/img1.jpg')}}'" alt="{{$banner->name}} image">
                 <div class="media-body">
                     <h5 class="text-hover-primary mb-0">{{Str::limit($banner['title'], 25, '...')}}</h5>
                 </div>

@@ -30,12 +30,12 @@
                     <div class="col-md-auto mb-3 mb-md-0">
                         <div class="d-flex align-items-center">
                             <img class="avatar avatar-xxl avatar-4by3 mr-4"
-                                 src="{{asset('storage/app/banner')}}/{{$banner->image}}"
-                                 onerror="this.src='{{asset('assets/admin/img/160x160/img2.jpg')}}'"
+                                 src="{{asset('storage/app/public/banner')}}/{{$banner->image}}"
+                                 onerror="this.src='{{asset('public/assets/admin/img/160x160/img2.jpg')}}'"
                                  alt="Image Description">
                             <div class="d-block">
-
-
+                                
+                                
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                                         @csrf
                                         <!-- Search -->
                                         <div class="row">
-                                            <div class="input-group-prepend col-md-7">
+                                            <div class="input-group-prepend col-md-7">   
                                             @php($allrestaurants=App\Models\Restaurant::all())
                                                 <select name="restaurant_id" id="restaurant_id" class="form-control">
                                                     @forelse($allrestaurants as $restaurant)
@@ -114,7 +114,7 @@
                                         <!-- End Search -->
                                     </form>
                                 </th>
-
+                                
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -127,8 +127,8 @@
                                     <td>
                                         <div class="initial-3">
                                             <img width="60" class="img-circle"
-                                                 onerror="this.src='{{asset('assets/admin/img/160x160/img1.jpg')}}'"
-                                                 src="{{asset('storage/app/restaurant')}}/{{$dm['logo']}}">
+                                                 onerror="this.src='{{asset('public/assets/admin/img/160x160/img1.jpg')}}'"
+                                                 src="{{asset('storage/app/public/restaurant')}}/{{$dm['logo']}}">
                                         </div>
                                     </td>
                                     <td>

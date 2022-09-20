@@ -14,7 +14,7 @@
                 <div class="col-sm mb-2 mb-sm-0">
                     <h1 class="page-header-title text-capitalize">
                         <div class="card-header-icon d-inline-flex mr-2 img">
-                            <img src="{{asset('/assets/admin/img/bell.png')}}" alt="public">
+                            <img src="{{asset('/public/assets/admin/img/bell.png')}}" alt="public">
                         </div>
                         <span>
                             {{__('messages.notification')}} {{__('messages.setting')}}
@@ -211,7 +211,7 @@
                         @php($data=$ofdm?json_decode($ofdm->value,true):'')
                         <div class="col-md-6 col-12">
                             <div class="form-group">
-
+                                
                                 <div class="d-flex flex-wrap justify-content-between mb-3">
                                     <span class="d-block text--semititle">
                                         {{__('messages.order')}} {{__('messages.out_for_delivery')}} {{__('messages.message')}}
@@ -237,7 +237,7 @@
                         @php($data=$odm?json_decode($odm->value,true):'')
                         <div class="col-md-6 col-12">
                             <div class="form-group">
-
+                                
                                 <div class="d-flex flex-wrap justify-content-between mb-3">
                                     <span class="d-block text--semititle">
                                         {{__('messages.order')}} {{__('messages.delivered')}} {{__('messages.message')}}
@@ -289,7 +289,7 @@
                         @php($data=$dbs?json_decode($dbs->value,true):'')
                         <div class="col-md-6 col-12">
                             <div class="form-group">
-
+                                
                                 <div class="d-flex flex-wrap justify-content-between mb-3">
                                     <span class="d-block text--semititle">
                                         {{__('messages.deliveryman')}} {{__('messages.start')}} {{__('messages.message')}}
@@ -311,12 +311,12 @@
                                         class="form-control" placeholder="Ex : Order delivered successfully">{{$data['message']??''}}</textarea>
                             </div>
                         </div>--}}
-
+                        
                         @php($dbc=\App\Models\BusinessSetting::where('key','delivery_boy_delivered_message')->first())
                         @php($data=$dbc?json_decode($dbc->value,true):'')
                         <div class="col-md-6 col-12">
                             <div class="form-group">
-
+                                
                                 <div class="d-flex flex-wrap justify-content-between mb-3">
                                     <span class="d-block text--semititle">
                                         {{__('messages.deliveryman')}} {{__('messages.delivered')}} {{__('messages.message')}}
@@ -403,7 +403,7 @@
 
 @push('script_2')
 <script>
-
+    
     function checkedFunc() {
         $('.switch--custom-label .toggle-switch-input').each( function() {
             if(this.checked) {

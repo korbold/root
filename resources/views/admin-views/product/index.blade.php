@@ -4,7 +4,7 @@
 
 @push('css_or_js')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="{{ asset('assets/admin/css/tags-input.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/assets/admin/css/tags-input.min.css') }}" rel="stylesheet">
 @endpush
 
 @section('content')
@@ -104,7 +104,7 @@
                                     <div class="form-group mb-0 h-100 d-flex flex-column">
                                         <center id="image-viewer-section" class="my-auto">
                                             <img class="initial-52" id="viewer"
-                                                src="{{ asset('/assets/admin/img/100x100/food-default-image.png') }}" alt="banner image" />
+                                                src="{{ asset('/public/assets/admin/img/100x100/food-default-image.png') }}" alt="banner image" />
                                         </center>
                                         <div class="custom-file mt-3">
                                             <input type="file" name="image" id="customFileEg1" class="custom-file-input"
@@ -162,7 +162,7 @@
                                                     for="exampleFormControlSelect1">{{ __('messages.sub_category') }}<span
                                                         class="input-label-secondary"
                                                         data-toggle="tooltip" data-placement="right" data-original-title="{{ __('messages.category_required_warning') }}"><img
-                                                            src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                            src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                             alt="{{ __('messages.category_required_warning') }}"></span></label>
                                                 <select name="sub_category_id" id="sub-categories" class="form-control js-select2-custom">
                                                     <option value="" selected disabled>{{ translate('Select Sub Category') }}</option>
@@ -186,7 +186,7 @@
                                                     for="exampleFormControlSelect1">{{ __('messages.addon') }}<span
                                                         class="input-label-secondary"
                                                         data-toggle="tooltip" data-placement="right" data-original-title="{{ __('messages.restaurant_required_warning') }}"><img
-                                                            src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                            src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                             alt="{{ __('messages.restaurant_required_warning') }}"></span></label>
                                                 <select name="addon_ids[]" class="form-control border js-select2-custom" multiple="multiple"
                                                     id="add_on">
@@ -399,7 +399,7 @@
     </script>
 
 
-    <script src="{{ asset('assets/admin') }}/js/tags-input.min.js"></script>
+    <script src="{{ asset('public/assets/admin') }}/js/tags-input.min.js"></script>
 
     <script>
         $('#choice_attributes').on('change', function() {
@@ -526,7 +526,7 @@
                     $('#choice_attributes').val(null).trigger('change');
                     $('#customer_choice_options').val(null).trigger('change');
                     $('#variant_combination').empty().trigger('change');
-                    $('#viewer').attr('src','{{asset('assets/admin/img/900x400/img1.jpg')}}');
+                    $('#viewer').attr('src','{{asset('public/assets/admin/img/900x400/img1.jpg')}}');
                 })
             </script>
 @endpush

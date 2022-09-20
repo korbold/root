@@ -14,7 +14,7 @@
                 <div class="col-sm mb-2 mb-sm-0">
                     <h2 class="page-header-title text-capitalize">
                         <div class="card-header-icon d-inline-flex mr-2 img">
-                            <img src="http://localhost/stack-food/multivendor-food-admin/assets/admin/img/addon.png" alt="public">
+                            <img src="http://localhost/stack-food/multivendor-food-admin/public/assets/admin/img/addon.png" alt="public">
                         </div>
                         <span>
                             {{__('messages.addon')}} {{__('messages.update')}}

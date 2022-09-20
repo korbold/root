@@ -15,7 +15,7 @@
                 <div>
                     <h1 class="page-header-title">
                         <span class="page-header-icon"><i class="tio-settings"></i></span>
-                        <span>{{__('messages.settings')}}</span>
+                        <span>{{__('messages.settings')}}</span>    
                     </h1>
                 </div>
                 <div>
@@ -87,9 +87,9 @@
                             class="avatar avatar-xxl avatar-circle avatar-border-lg avatar-uploader profile-cover-avatar"
                             for="avatarUploader">
                             <img id="viewer"
-                                 onerror="this.src='{{asset('assets/admin/img/160x160/img1.jpg')}}'"
+                                 onerror="this.src='{{asset('public/assets/admin/img/160x160/img1.jpg')}}'"
                                  class="avatar-img"
-                                 src="{{asset('storage/app/admin')}}/{{auth('admin')->user()->image}}"
+                                 src="{{asset('storage/app/public/admin')}}/{{auth('admin')->user()->image}}"
                                  alt="Image">
 
                             <input type="file" name="image" class="js-file-attach avatar-uploader-input"

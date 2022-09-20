@@ -59,7 +59,7 @@
                         <!-- Static -->
                         <div class="my-auto">
                             <div class="search--no-found">
-                                <img src="http://localhost/stack-food/multivendor-food-admin/assets/vendor/img/search-icon.png" alt="img">
+                                <img src="http://localhost/stack-food/multivendor-food-admin/public/assets/vendor/img/search-icon.png" alt="img">
                                 <p>
                                     {{ translate('To get required search result First select zone & then restaurant to search category wise food or search manually to find food under that restaurant') }}
                                 </p>

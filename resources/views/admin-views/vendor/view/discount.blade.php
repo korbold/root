@@ -4,7 +4,7 @@
 
 @push('css_or_js')
     <!-- Custom styles for this page -->
-    <link href="{{asset('assets/admin/css/croppie.css')}}" rel="stylesheet">
+    <link href="{{asset('public/assets/admin/css/croppie.css')}}" rel="stylesheet">
 
 @endpush
 
@@ -75,7 +75,7 @@
                     <i class="tio-open-in-new"></i>
                     {{$restaurant->discount? __('messages.update') : __('messages.add').' '.__('messages.discount')}}
                 </button>
-
+                
                 @if($restaurant->discount)
                 <button type="button" onclick="form_alert('discount-{{$restaurant->id}}','Want to remove discount?')" class="btn btn--danger"><i class="tio-delete-outlined"></i> {{__('messages.delete')}}</button>
                 @endif
@@ -119,13 +119,13 @@
             @else
             <div class="form-group">
                 <label class="d-flex justify-content-center rounded px-4 form-control" for="restaurant_status">
-                    <span class="card-subtitle">{{translate('messages.no_discount')}}</span>
+                    <span class="card-subtitle">{{translate('messages.no_discount')}}</span> 
                 </label>
             </div>
             @endif
+            
 
-
-
+            
         </div>
     </div>
 </div>
@@ -141,7 +141,7 @@
       </div>
       <div class="modal-body">
         <form action="{{route('admin.vendor.discount',[$restaurant['id']])}}" method="post" id="discount-form">
-            @csrf
+            @csrf 
             <div class="row gx-2">
                 <div class="col-md-4 col-6">
                     <div class="form-group">
@@ -152,7 +152,7 @@
                 <div class="col-md-4 col-6">
                     <div class="form-group">
                         <label class="form-label font-medium text-capitalize" for="title">{{__('messages.min')}} {{__('messages.purchase')}} ({{\App\CentralLogics\Helpers::currency_symbol()}})</label>
-                        <input type="number" name="min_purchase" step="0.01" min="0" max="100000" class="form-control" placeholder="100" value="{{$restaurant->discount?$restaurant->discount->min_purchase:'0'}}">
+                        <input type="number" name="min_purchase" step="0.01" min="0" max="100000" class="form-control" placeholder="100" value="{{$restaurant->discount?$restaurant->discount->min_purchase:'0'}}"> 
                     </div>
                 </div>
                 <div class="col-md-4 col-6">
@@ -166,7 +166,7 @@
                 <div class="col-md-6 col-6">
                     <div class="form-group">
                         <label class="form-label font-medium text-capitalize" for="title">{{__('messages.start')}} {{__('messages.date')}}</label>
-                        <input type="date" id="date_from" class="form-control" required name="start_date" value="{{$restaurant->discount?date('Y-m-d',strtotime($restaurant->discount->start_date)):''}}">
+                        <input type="date" id="date_from" class="form-control" required name="start_date" value="{{$restaurant->discount?date('Y-m-d',strtotime($restaurant->discount->start_date)):''}}"> 
                     </div>
                 </div>
                 <div class="col-md-6 col-6">

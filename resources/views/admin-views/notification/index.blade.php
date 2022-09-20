@@ -11,7 +11,7 @@
                 <div class="col-sm mb-2 mb-sm-0">
                     <h1 class="page-header-title text-capitalize">
                         <div class="card-header-icon d-inline-flex mr-2 img">
-                            <img src="{{asset('/assets/admin/img/bell.png')}}" alt="public">
+                            <img src="{{asset('/public/assets/admin/img/bell.png')}}" alt="public">
                         </div>
                         <span>
                             {{__('messages.notification')}}
@@ -47,7 +47,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="input-label" for="tergat">{{__('messages.send')}} {{__('messages.to')}}</label>
-
+                        
                                 <select name="tergat" class="form-control" id="tergat" data-placeholder="Ex: contact@company.com" required>
                                     <option value="customer">{{__('messages.customer')}}</option>
                                     <option value="deliveryman">{{__('messages.deliveryman')}}</option>
@@ -62,9 +62,9 @@
                                 <label class="form-label">&nbsp;</label>
                                 <center class="mb-3">
                                     <img class="initial-30" id="viewer"
-                                        src="{{asset('assets/admin/img/900x400/img1.png')}}" alt="image"/>
+                                        src="{{asset('public/assets/admin/img/900x400/img1.png')}}" alt="image"/>
                                 </center>
-
+                                
                                 <label>{{__('messages.notification')}} {{__('messages.banner')}}</label><small class="text-danger">* ( {{__('messages.ratio')}} 3:1 )</small>
                                 <div class="custom-file">
                                     <input type="file" name="image" id="customFileEg1" class="custom-file-input"
@@ -106,7 +106,7 @@
                         </div>
                     <!-- End Search -->
                     </form>
-
+                    
                 <div class="hs-unfold ml-3">
                     <a class="js-hs-unfold-invoker btn btn-sm btn-white dropdown-toggle btn export-btn btn-outline-primary btn--primary font--sm" href="javascript:;"
                         data-hs-unfold-options='{
@@ -121,19 +121,19 @@
                         <span class="dropdown-header">{{__('messages.download')}} {{__('messages.options')}}</span>
                         <a target="_blank" id="export-excel" class="dropdown-item" href="{{route('admin.notification.export', ['type'=>'excel'])}}">
                             <img class="avatar avatar-xss avatar-4by3 mr-2"
-                                    src="{{asset('assets/admin')}}/svg/components/excel.svg"
+                                    src="{{asset('public/assets/admin')}}/svg/components/excel.svg"
                                     alt="Image Description">
                             {{__('messages.excel')}}
                         </a>
                         <a target="_blank" id="export-csv" class="dropdown-item" href="{{route('admin.notification.export', ['type'=>'excel'])}}">
                             <img class="avatar avatar-xss avatar-4by3 mr-2"
-                                    src="{{asset('assets/admin')}}/svg/components/placeholder-csv-format.svg"
+                                    src="{{asset('public/assets/admin')}}/svg/components/placeholder-csv-format.svg"
                                     alt="Image Description">
                             .{{__('messages.csv')}}
                         </a>
                     </div>
                 </div>
-                </div>
+                </div>                        
             </div>
             <!-- Table -->
             <div class="table-responsive datatable-custom">
@@ -170,7 +170,7 @@
                                 {{substr($notification['description'],0,25)}} {{strlen($notification['description'])>25?'...':''}}
                             </td>
                             <td>
-                                <img class="initial-31" src="{{asset('storage/app/notification')}}/{{$notification['image']}}" onerror="src='{{asset('assets/admin/img/900x400/img1.jpg')}}'">
+                                <img class="initial-31" src="{{asset('storage/app/public/notification')}}/{{$notification['image']}}" onerror="src='{{asset('public/assets/admin/img/900x400/img1.jpg')}}'">
                             </td>
                             <td>
                                 {{$notification->zone_id==null?__('messages.all'):($notification->zone?$notification->zone->name:__('messages.zone').' '.__('messages.deleted'))}}
@@ -205,7 +205,7 @@
                 </table>
                 @if(count($notifications) === 0)
                 <div class="empty--data">
-                    <img src="{{asset('/assets/admin/img/empty.png')}}" alt="public">
+                    <img src="{{asset('/public/assets/admin/img/empty.png')}}" alt="public">
                     <h5>
                         {{translate('no_data_found')}}
                     </h5>
@@ -274,10 +274,10 @@
         });
 
         $('#notification').on('submit', function (e) {
-
+            
             e.preventDefault();
             var formData = new FormData(this);
-
+            
             Swal.fire({
                 title: '{{__('messages.are_you_sure')}}',
                 text: '{{__('messages.you want to sent notification to')}}'+$('#tergat').val()+'?',
@@ -330,7 +330,7 @@
             $('#zone').val('all').trigger('change');
             $('#tergat').val('customer').trigger('change');
             $('#description').val(null);
-            $('#viewer').attr('src','{{asset('assets/admin/img/900x400/img1.png')}}');
+            $('#viewer').attr('src','{{asset('public/assets/admin/img/900x400/img1.png')}}');
             $('#customFileEg1').val(null);
         })
     </script>

@@ -11,7 +11,7 @@
         <div class="page-header">
             <h1 class="page-header-title mb-2 text-capitalize">
                 <div class="card-header-icon d-inline-flex mr-2 img">
-                    <img src="{{asset('/assets/admin/img/clean-database.png')}}" alt="public">
+                    <img src="{{asset('/public/assets/admin/img/clean-database.png')}}" alt="public">
                 </div>
                 <span>
                     {{ translate('Clean database') }}
@@ -55,7 +55,7 @@
     var restaurant_dependent = ['restaurants','restaurant_schedule', 'discounts'];
     var order_dependent = ['order_delivery_histories','d_m_reviews', 'delivery_histories', 'track_deliverymen', 'order_details', 'reviews'];
     var zone_dependent = ['restaurants','vendors', 'orders'];
-    var user_info_dependent = ['conversations', 'messages'];
+    var user_info_dependent = ['conversations', 'messages'];    
     $(document).ready(function () {
         $('.form-check-input').on('change', function(event){
             if($(this).is(':checked')){
@@ -111,7 +111,7 @@
             $('#'+value).prop('checked', status);
         });
         $('#vendors').prop('checked', status);
-
+        
     }
 
     function checked_orders(status) {

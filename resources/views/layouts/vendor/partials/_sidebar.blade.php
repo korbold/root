@@ -8,12 +8,12 @@
                     @php($restaurant_data=\App\CentralLogics\Helpers::get_restaurant_data())
                     <a class="navbar-brand pt-0 pb-0" href="{{route('vendor.dashboard')}}" aria-label="Front">
                         <img class="navbar-brand-logo"
-                            onerror="this.src='{{asset('assets/admin/img/160x160/img2.jpg')}}'"
-                            src="{{asset('storage/app/restaurant/'.$restaurant_data->logo)}}"
+                            onerror="this.src='{{asset('public/assets/admin/img/160x160/img2.jpg')}}'"
+                            src="{{asset('storage/app/public/restaurant/'.$restaurant_data->logo)}}"
                             alt="Logo">
                         <img class="navbar-brand-logo-mini"
-                            onerror="this.src='{{asset('assets/admin/img/160x160/img2.jpg')}}'"
-                            src="{{asset('storage/app/restaurant/'.$restaurant_data->logo)}}" alt="Logo">
+                            onerror="this.src='{{asset('public/assets/admin/img/160x160/img2.jpg')}}'"
+                            src="{{asset('storage/app/public/restaurant/'.$restaurant_data->logo)}}" alt="Logo">
                         <div class="ps-2">
                             <h6>
                                 {{\Illuminate\Support\Str::limit($restaurant_data->name,15)}}
@@ -43,7 +43,7 @@
             </div>
 
             <!-- Content -->
-            <div class="navbar-vertical-content text-capitalize bg-a1fe00">
+            <div class="navbar-vertical-content text-capitalize bg-334257">
                 <ul class="navbar-nav navbar-nav-lg nav-tabs">
                     <!-- Dashboards -->
                     <li class="pt-4"></li>

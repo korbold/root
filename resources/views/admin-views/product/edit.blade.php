@@ -4,7 +4,7 @@
 
 @push('css_or_js')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="{{ asset('assets/admin/css/tags-input.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/assets/admin/css/tags-input.min.css') }}" rel="stylesheet">
 @endpush
 
 @section('content')
@@ -119,14 +119,14 @@
                                     @if (isset($product['image']))
                                         <center id="image-viewer-section" class="my-auto py-3">
                                             <img class="initial-52" id="viewer"
-                                                src="{{ asset('storage/app/product') }}/{{ $product['image'] }}"
-                                                onerror="this.src='{{ asset('/assets/admin/img/100x100/food-default-image.png') }}'"
+                                                src="{{ asset('storage/app/public/product') }}/{{ $product['image'] }}"
+                                                onerror="this.src='{{ asset('/public/assets/admin/img/100x100/food-default-image.png') }}'"
                                                 alt="product image" />
                                         </center>
                                     @else
                                         <center id="image-viewer-section" class="my-auto py-3">
                                             <img class="initial-52" id="viewer"
-                                                src="{{ asset('assets/admin/img/400x400/img2.jpg') }}" alt="banner image" />
+                                                src="{{ asset('public/assets/admin/img/400x400/img2.jpg') }}" alt="banner image" />
                                         </center>
                                     @endif
                                     <div class="custom-file">
@@ -189,7 +189,7 @@
                                                     for="exampleFormControlSelect1">{{ __('messages.sub_category') }}<span
                                                         class="input-label-secondary"
                                                         data-toggle="tooltip" data-placement="right" data-original-title="{{ __('messages.category_required_warning') }}"><img
-                                                            src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                            src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                             alt="{{ __('messages.category_required_warning') }}"></span></label>
                                                 <select name="sub_category_id" id="sub-categories"
                                                     data-id="{{ count($product_category) >= 2 ? $product_category[1]->id : '' }}"
@@ -218,7 +218,7 @@
                                                     for="exampleFormControlSelect1">{{ __('messages.addon') }}<span
                                                         class="input-label-secondary"
                                                         data-toggle="tooltip" data-placement="right" data-original-title="{{ __('messages.restaurant_required_warning') }}"><img
-                                                            src="{{ asset('/assets/admin/img/info-circle.svg') }}"
+                                                            src="{{ asset('/public/assets/admin/img/info-circle.svg') }}"
                                                             alt="{{ __('messages.restaurant_required_warning') }}"></span></label>
                                                 <select name="addon_ids[]" class="form-control border js-select2-custom" multiple="multiple"
                                                     id="add_on">
@@ -470,7 +470,7 @@
         });
     </script>
 
-    <script src="{{ asset('assets/admin') }}/js/tags-input.min.js"></script>
+    <script src="{{ asset('public/assets/admin') }}/js/tags-input.min.js"></script>
 
     <script>
         $('#choice_attributes').on('change', function() {
