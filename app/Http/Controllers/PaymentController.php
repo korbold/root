@@ -32,6 +32,7 @@ class PaymentController extends Controller
         }
 
         return response()->json(['errors' => ['code' => 'order-payment', 'message' => 'Data not found']], 403);
+
     }
 
     public function success()
@@ -51,9 +52,9 @@ class PaymentController extends Controller
     public function fail()
     {
         $callback = null;
-        
+
         $order = Order::where(['id' => session('order_id'), 'user_id'=>session('customer_id')])->first();
-        
+
         if(isset($order)) $callback = $order->callback;
 
         if ($callback != null) {
