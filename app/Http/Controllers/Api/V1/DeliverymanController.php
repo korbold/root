@@ -203,7 +203,7 @@ class DeliverymanController extends Controller
         $order->accepted = now();
         $order->save();
 
-        $dm->current_orders = $dm->current_orders+1;
+        $dm->current_orders = 1;
         $dm->save();
 
         $dm->increment('assigned_order_count');
@@ -268,6 +268,9 @@ class DeliverymanController extends Controller
             'status' => 'required|in:confirmed,canceled,picked_up,delivered',
         ]);
 
+        $dm = DeliveryMan::where(['auth_token' => $request['token']])->first();
+
+
         $validator->sometimes('otp', 'required', function ($request) {
             return (Config::get('order_delivery_verification')==1 && $request['status']=='delivered');
         });
@@ -275,7 +278,6 @@ class DeliverymanController extends Controller
         if ($validator->fails()) {
             return response()->json(['errors' => Helpers::error_processor($validator)], 403);
         }
-        $dm = DeliveryMan::where(['auth_token' => $request['token']])->first();
 
         $order = Order::where(['id' => $request['order_id'], 'delivery_man_id' => $dm['id']])->Notpos()->first();
 
@@ -347,6 +349,7 @@ class DeliverymanController extends Controller
             $order->customer->increment('order_count');
 
             $dm->current_orders = $dm->current_orders>1?$dm->current_orders-1:0;
+            // $dm->current_orders = 1;
             $dm->save();
 
             $dm->increment('order_count');
@@ -549,7 +552,7 @@ class DeliverymanController extends Controller
         if($dm->userinfo){
             $dm->userinfo->delete();
         }
-        
+
         $dm->delete();
         return response()->json([]);
     }

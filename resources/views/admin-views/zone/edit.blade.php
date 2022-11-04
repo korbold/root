@@ -71,7 +71,7 @@
                                         <label class="input-label">
                                             {{translate('messages.minimum_delivery_charge')}}  ({{\App\CentralLogics\Helpers::currency_symbol()}})
                                         </label>
-                                        <input id="min_delivery_charge" name="minimum_delivery_charge" type="number" class="form-control h--45px" placeholder="Ex: 10" value="{{$zone->minimum_shipping_charge}}" required>
+                                        <input id="min_delivery_charge" name="minimum_delivery_charge" type="number" class="form-control h--45px"  min="0" step=".01" placeholder="Ex: 10" value="{{$zone->minimum_shipping_charge}}" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -79,7 +79,7 @@
                                         <label class="input-label">
                                             {{translate('messages.delivery_charge_per_km')}} ({{\App\CentralLogics\Helpers::currency_symbol()}})
                                         </label>
-                                        <input id="delivery_charge_per_km" name="per_km_delivery_charge" type="number" class="form-control h--45px" placeholder="Ex: 10" value="{{$zone->per_km_shipping_charge}}" required>
+                                        <input id="delivery_charge_per_km" min="0" step=".01" name="per_km_delivery_charge" type="number" class="form-control h--45px" placeholder="Ex: 10" value="{{$zone->per_km_shipping_charge}}" required>
                                     </div>
                                 </div>
                             </div>

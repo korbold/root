@@ -11,3 +11,7 @@ npm-debug.log
 yarn-error.log
 error_log
 /storage/app
+/storage/framework
+/storage/logs
+/storage/debugbar
+

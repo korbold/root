@@ -459,7 +459,7 @@ class OrderController extends Controller
             $deliveryman->current_orders = $deliveryman->current_orders + 1;
             $deliveryman->save();
             $deliveryman->increment('assigned_order_count');
-        
+
 
             if ($order->delivery_man) {
                 $dm = $order->delivery_man;
